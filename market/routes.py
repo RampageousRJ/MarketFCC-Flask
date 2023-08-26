@@ -24,7 +24,8 @@ def register():
                         password=regform.password1.data)
         db.session.add(new_user)
         db.session.commit()
-        return redirect(url_for('market_page'))
+        flash('Registered Successfully! Login to continue',category='success')
+        return redirect(url_for('login'))
     if regform.errors != {}:
         for error_msg in regform.errors.values():
             flash(error_msg[0], category='danger')
