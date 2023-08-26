@@ -1,0 +1,21 @@
+body{
+    background-color: #222225;
+    color: white;
+}
+p{
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.form-labels{
+    background-color: #393941;
+    border-radius: 2%;
+    padding: 5%
+}
+.create-account{
+    color:whitesmoke
+}
+.form-group{
+    margin: 0 auto;
+}

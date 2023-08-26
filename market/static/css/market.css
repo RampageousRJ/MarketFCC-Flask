@@ -1,0 +1,19 @@
+.logo{
+    max-width: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: inline;
+}
+body{
+    background-color: #212121;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+button{
+    padding: 5%;
+}
+tr{
+    text-align: center;
+}
