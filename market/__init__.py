@@ -13,5 +13,8 @@ app.config['RECAPTCHA_PRIVATE_KEY'] = "6LcyAbAnAAAAAPXGV_OzjOXHWvxu6ocLeO3XR7VV"
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 login_manager=LoginManager(app)
+login_manager.login_view = "login"
+login_manager.login_message = 'Login to continue'
+login_manager.login_message_category = 'info'
 
 from market import routes

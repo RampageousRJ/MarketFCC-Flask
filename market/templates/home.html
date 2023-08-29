@@ -43,7 +43,7 @@
                     </li>
                     <li class="nav-link"></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
@@ -71,7 +71,31 @@
     <br>
     <br>
     <br>
-    <h1>Welcome back</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style='background-color: darkslategrey; text-align: center;'>
+                <div class="row" style='padding:5% 0 5% 0'>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h3>Step into Style: KICKstart Every Move</h3>
+                    </div>
+                </div>
+                <div class="row" style="padding:0 0 2.5% 0">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h5>Join the elites now!</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8" style="padding: 0 0 2.5% 0;">
+                        <a href="{{url_for('login')}}" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@ from flask import render_template,redirect,url_for,flash
 from market.models import Item,User
 from market.forms import RegisterForm,LoginForm
 from market import db
-from flask_login import login_user
+from flask_login import login_user,logout_user,login_required
 
 @app.route('/')
 @app.route('/home')
@@ -11,6 +11,7 @@ def home():
     return render_template('home.html')
 
 @app.route('/market')
+@login_required
 def market_page():
     items = Item.query.order_by(Item.id.asc()).all()
     return render_template('market.html',items=items)
@@ -46,4 +47,10 @@ def login():
 @app.errorhandler(404)
 def not_found(e):
     flash('Page not found: Redirected to home page',category='danger')
+    return redirect(url_for('home'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have logged out successfully!',category='info')
     return redirect(url_for('home'))
