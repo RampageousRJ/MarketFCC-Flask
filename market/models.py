@@ -29,6 +29,9 @@ class User(db.Model,UserMixin):
     def check_password_correction(self,attempted_password):
         return bcrypt.check_password_hash(self.password_hash,attempted_password)
     
+    def can_purchase(self,item):
+        return self.budget >= item.price 
+    
 
 class Item(db.Model):
     __tablename__='item'
