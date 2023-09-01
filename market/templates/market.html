@@ -69,31 +69,45 @@
                 {% endfor %}
             {% endif %}
     {% endwith %}
-    <table class="table table-hover table-secondary">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Options</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in items %}
-                <tr>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.name }}</td>
-                    <td>₹{{ item.price }}</td>
-                    <td>
-                        <button class="btn btn-outline btn-info">More Info</button>
-                        <button class="btn"></button>
-                        <button class="btn btn-outline btn-success">Purchase this Item</button>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 
+        <div class="row" >
+                <div class="col-8" style="padding:2% 2% 0 2%; text-align: center;">
+                <h2 style="text-shadow:1px 0 5px orange;">Buy Items</h2>
+                <br>
+                <table class="table table-hover table-secondary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        {% include 'includes/modals.html' %}
+                            <tr>
+                                <td>{{ item.id }}</td>  
+                                <td>{{ item.name }}</td>
+                                <td>₹{{ item.price }}</td>
+                                <td>
+                                    <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{ item.id }}">More Info</button>
+                                    <button class="btn"></button>
+                                    <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-Success-{{ item.id }}">Purchase this Item</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="col-4" style="padding:2% 2% 0 2%; text-align: center;">
+                <h2 style="text-shadow:#FC0 1px 0 5px;">Owned Items</h2>
+                <br>
+            </div>  
+            
+        </div>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>
