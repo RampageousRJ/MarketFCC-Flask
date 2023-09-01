@@ -85,7 +85,7 @@
                     </thead>
                     <tbody>
                         {% for item in items %}
-                        {% include 'includes/modals.html' %}
+                        {% include 'includes/listed_modals.html' %}
                             <tr>
                                 <td>{{ item.id }}</td>  
                                 <td>{{ item.name }}</td>
@@ -104,6 +104,20 @@
             <div class="col-4" style="padding:2% 2% 0 2%; text-align: center;">
                 <h2 style="text-shadow:#FC0 1px 0 5px;">Owned Items</h2>
                 <br>
+                <div class="row">
+                    {% for owned_item in owned_items %}
+                    {% include 'includes/owned_modals.html' %}
+                    <div class="col-md-6">
+                        <div class="card text-center bg-dark">
+                            <div class="card-body" style="border:1px solid black; text-align:center;">
+                              <h4 class="card-title">{{ owned_item.id }}</h4>
+                              <p>Price: {{ owned_item.price }}</p>
+                              <button type="button" class='btn btn-outline-danger' data-toggle="modal" data-target="#Modal-Sell-{{ owned_item.id }}">Sell Item</button>
+                            </div>
+                          </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>  
             
         </div>
